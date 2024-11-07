@@ -1,0 +1,74 @@
+body {
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: black solid 2px;
+  min-height: 60px;
+}
+
+.header a {
+  font-size: 36px;
+  text-decoration: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header button {
+  border: black solid 1px;
+  font-size: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 12px 20px;
+  color: black;
+  background-color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.header button:hover {
+  border: black solid 2px;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  padding: 20px;
+  gap: 40px;
+}
+
+.card {
+  color: white;
+  font-weight: 600;
+  border: #4b4e53 solid 4px;
+  background-color: #333333;
+  height: 300px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 24px;
+}
