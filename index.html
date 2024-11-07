@@ -15,24 +15,25 @@
 
     <div class="container">
       <div class="books"></div>
+    </div>
 
-      <!-- Form popup -->
-      <div class="form">
-        <div id="add-book">
-          <form id="add-book-form">
-            <label for="Title">Title:</label>
-            <input type="text" id="Title" name="Title" />
-            <label for="Author">Author:</label>
-            <input type="text" id="Author" name="Authhor" />
-            <label for="Pages">Pages:</label>
-            <input type="text" id="Pages" name="Pages" />
-            <label for="Read">Read:</label>
-            <input type="text" id="Read" name="Read" />
-          </form>
-          <div class="form-btn">
-            <button id="submit-form-btn">Submit</button>
-            <button id="clear-btn">Clear</button>
-          </div>
+    <!-- Form popup -->
+    <div class="form" id="form-overlay">
+      <div id="add-book">
+        <button id="close-form-btn">x</button>
+        <form id="add-book-form">
+          <label for="Title">Title:</label>
+          <input type="text" id="Title" name="Title" />
+          <label for="Author">Author:</label>
+          <input type="text" id="Author" name="Authhor" />
+          <label for="Pages">Pages:</label>
+          <input type="text" id="Pages" name="Pages" />
+          <label for="Read">Read:</label>
+          <input type="text" id="Read" name="Read" />
+        </form>
+        <div class="form-btn">
+          <button id="submit-form-btn">Submit</button>
+          <button id="clear-btn">Clear</button>
         </div>
       </div>
     </div>

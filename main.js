@@ -44,12 +44,14 @@ addBookToLibrary(
   "not read yet"
 );
 
-// Add book button
+// Open form
+const openForm = document.querySelector(".form");
 const addBookBtn = document.querySelector("#add-book-btn");
 addBookBtn.addEventListener("click", displayForm);
 
 function displayForm() {
-  document.getElementById("#add-book").style.display = "";
+  openForm.classList.add("open-form");
+  console.log(openForm);
 }
 
 //Submit new book
@@ -69,6 +71,7 @@ function addFormData() {
 
   // reset form after submit
   document.getElementById("add-book-form").reset();
+  openForm.classList.remove("open-form");
 }
 
 // Clear data in form
@@ -77,4 +80,22 @@ clearBtn.addEventListener("click", clearForm);
 
 function clearForm() {
   document.getElementById("add-book-form").reset();
+}
+
+// Close form when click at blank space
+const formOverlay = document.querySelector("#form-overlay");
+formOverlay.addEventListener("click", closeFormOverlay);
+
+function closeFormOverlay(event) {
+  if (event.target === formOverlay) {
+    openForm.classList.remove("open-form");
+  }
+}
+
+// Close form button
+const closeBtn = document.querySelector("#close-form-btn");
+closeBtn.addEventListener("click", closeFormBtn);
+
+function closeFormBtn() {
+  openForm.classList.remove("open-form");
 }
