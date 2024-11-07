@@ -1,15 +1,16 @@
 const myLibrary = [];
 
-function Book(title, author, page, read) {
-  this.title = title;
-  this.author = author;
-  this.page = page;
-  this.read = read;
+function Book(Title, Author, Pages, Read) {
+  this.Title = Title;
+  this.Author = Author;
+  this.Pages = Pages;
+  this.Read = Read;
 }
 
-function addBookToLibrary(title, author, page, read) {
-  let book = new Book(title, author, page, read);
+function addBookToLibrary(Title, Author, Pages, Read) {
+  let book = new Book(Title, Author, Pages, Read);
   myLibrary.push(book);
+  displayBooksOnPage();
 }
 
 function displayBooksOnPage() {
@@ -43,4 +44,37 @@ addBookToLibrary(
   "not read yet"
 );
 
-displayBooksOnPage();
+// Add book button
+const addBookBtn = document.querySelector("#add-book-btn");
+addBookBtn.addEventListener("click", displayForm);
+
+function displayForm() {
+  document.getElementById("#add-book").style.display = "";
+}
+
+//Submit new book
+const submitBtn = document.querySelector("#submit-form-btn");
+submitBtn.addEventListener("click", addFormData);
+
+function addFormData() {
+  let Title = document.getElementById("Title").value;
+  let Author = document.getElementById("Author").value;
+  let Pages = document.getElementById("Pages").value;
+  let Read = document.getElementById("Read").value;
+
+  if (Title == "" || Author == "" || Pages == "" || Read == "") {
+    return;
+  }
+  addBookToLibrary(Title, Author, Pages, Read);
+
+  // reset form after submit
+  document.getElementById("add-book-form").reset();
+}
+
+// Clear data in form
+const clearBtn = document.querySelector("#clear-btn");
+clearBtn.addEventListener("click", clearForm);
+
+function clearForm() {
+  document.getElementById("add-book-form").reset();
+}
