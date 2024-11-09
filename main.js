@@ -14,6 +14,7 @@ function addBookToLibrary(Title, Author, Pages, Read) {
 }
 
 function displayBooksOnPage() {
+  let index = 0;
   const books = document.querySelector(".books");
   books.innerHTML = "";
 
@@ -27,6 +28,33 @@ function displayBooksOnPage() {
       const para = document.createElement("p");
       para.textContent = `${key}: ${book[key]}`;
       card.appendChild(para);
+    }
+
+    // create remove book button
+    const removeBookBtn = document.createElement("button");
+    removeBookBtn.classList.add("remove-book-btn");
+    removeBookBtn.textContent = "Remove";
+    console.log("Show me my current array objects inside of foreach...", book);
+
+    // link the data attribute of the remove button to the array and card
+    removeBookBtn.dataset.linkedArray = index;
+    index++;
+    console.log(
+      "Show me the dataset link back to the array...",
+      removeBookBtn.dataset.linkedArray
+    );
+    card.appendChild(removeBookBtn);
+    removeBookBtn.addEventListener("click", removeBookFromLibrary);
+
+    function removeBookFromLibrary() {
+      let bookToRemove = removeBookBtn.dataset.linkedArray;
+      console.log(
+        "Attempting to remove array item via data attribute...",
+        parseInt(bookToRemove)
+      );
+      myLibrary.splice(parseInt(bookToRemove), 1);
+      card.remove();
+      displayBooksOnPage();
     }
   });
 }
@@ -43,6 +71,10 @@ addBookToLibrary(
   "1,056 pages",
   "not read yet"
 );
+
+/*
+ * A form adds new book to the array
+ */
 
 // Open form
 const openForm = document.querySelector(".form");
