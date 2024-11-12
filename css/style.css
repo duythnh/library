@@ -73,7 +73,8 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.12);
 }
 
-.card .remove-book-btn {
+.card .remove-book-btn,
+.card .read-book-btn {
   border: none;
   border-radius: 4px;
   padding: 10px;
@@ -83,11 +84,13 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-.card .remove-book-btn:hover {
+.card .remove-book-btn:hover,
+.card .read-book-btn:hover {
   background-color: #f1f1f1;
 }
 
-.card .remove-book-btn:active {
+.card .remove-book-btn:active,
+.card .read-book-btn:active {
   background-color: #ffffff;
 }
 

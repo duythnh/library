@@ -30,6 +30,29 @@ function displayBooksOnPage() {
       card.appendChild(para);
     }
 
+    // create read book button
+    const readBookBtn = document.createElement("button");
+    readBookBtn.classList.add("read-book-btn");
+    readBookBtn.textContent = "Read";
+
+    readBookBtn.dataset.linkedArray = index;
+
+    card.appendChild(readBookBtn);
+
+    readBookBtn.addEventListener("click", readBookStatus);
+
+    function readBookStatus() {
+      let readBook = readBookBtn.dataset.linkedArray;
+      let book = myLibrary[parseInt(readBook)];
+
+      if (book.Read === "Already Read") {
+        book.Read = "Not Read Yet";
+      } else {
+        book.Read = "Already Read";
+      }
+      displayBooksOnPage();
+    }
+
     // create remove book button
     const removeBookBtn = document.createElement("button");
     removeBookBtn.classList.add("remove-book-btn");
